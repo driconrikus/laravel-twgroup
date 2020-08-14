@@ -11,6 +11,7 @@ use App\Publication;
 
 class PublicationsController extends Controller
 {
+    
     public function __construct()
     {
         $this->middleware('auth');
@@ -59,9 +60,10 @@ class PublicationsController extends Controller
      */
     public function show($id)
     {
+        
         $publication = Publication::find($id);
 
-        return view('admin.publications.show');
+        return view('admin.publications.show', compact('publication'));
     }
 
     /**
@@ -71,10 +73,11 @@ class PublicationsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
+ 
         $publication = Publication::find($id);
 
-        return view('admin.publications.edit');
+        return view('admin.publications.edit', compact('publication'));
     }
 
     /**

@@ -12,7 +12,7 @@
                    {{ $publication->content }}
                </p>
                <p class="d-flex justify-content-end">Fecha de publicación: NULL </p>
-               <a href="#" class="d-flex justify-content-end">Editar...</a>
+               <a href="{{ route('publications.edit', $publication->id) }}" class="d-flex justify-content-end">Editar...</a>
                <a href="#" class="d-flex justify-content-end">Añadir comentario</a>
             </div>
 
