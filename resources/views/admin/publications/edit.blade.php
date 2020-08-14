@@ -6,9 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="card">
-                <div class="card-title">
-                    Editar Publicacion
-                </div>
+            <h2 class="card-title text-center">Editar Publicacion</h2>
                 <div class="card-body">
                 {!! Form::model($publication, ['route' => ['publications.update', $publication->id], 'method' => 'PUT']) !!}
                         

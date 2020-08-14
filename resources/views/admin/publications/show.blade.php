@@ -6,9 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="card">
-                <div class="card-title">
-                    Ver Publicacion
-                </div>
+                    <h2 class="card-title text-center">Ver Publicacion</h2>
                 <div class="card-body">
                     <p><strong>Title</strong> {{ $publication->title }}</p>
                 </div>
