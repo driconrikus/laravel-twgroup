@@ -7,15 +7,14 @@
                 <div class="card mb-3">
                     <div class="">
                         <h2 class="card-title ml-2 text-center">Lista de publicaciones</h2>
-
-                        <a href="{{ route('publications.create') }}"
+                    </div>
+                    <a href="{{ route('publications.create') }}"
                             class="btn btn-sm btn-primary pull-right">
                             Crear
                         </a>
-                    </div>
-                
                 <div class="card-body">
                     <table class="table table-striped table-hover">
+                        
                         <thead>
                             <tr>
                                 <th width="10px">ID</th>
