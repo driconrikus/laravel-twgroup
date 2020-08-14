@@ -16,7 +16,7 @@
                <p class="card-text"> 
                    {{ $publication->content }}
                </p>
-            <a href="{{ route('publication', $publication->title)}}" class="d-flex justify-content-end">Ver más</a>
+            <a href="{{ route('publication', $publication->id)}}" class="d-flex justify-content-end">Ver más</a>
             </div>
 
         </div>

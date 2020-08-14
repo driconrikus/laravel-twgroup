@@ -17,7 +17,7 @@ Auth::routes();
 
 Route::get('blog', 'Web\PageController@blog')->name('blog');
 
-Route::get('blog/{title}', 'Web\PageController@publication')->name('publication');
+Route::get('blog/{id}', 'Web\PageController@publication')->name('publication');
 
 //admin
 Route::resource('publications', 'Admin\PublicationsController');
