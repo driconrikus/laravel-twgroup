@@ -10,7 +10,7 @@
                     Editar Publicacion
                 </div>
                 <div class="card-body">
-                    {!! Form::open(['route' => ['publications.update', $publication->id],
+                    {!! Form::model($publication, ['route' => ['publications.update', $publication->id],
                         'method' => 'PUT']) !!}
                         @include('admin.publications.partials.form')
                     {!! Form::close() !!}

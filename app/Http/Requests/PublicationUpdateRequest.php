@@ -13,7 +13,7 @@ class PublicationUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,8 +24,7 @@ class PublicationUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'slug'  =>  'required|unique:publications,slug' . $this->publications
+            'title' => 'required'
         ];
     }
 }

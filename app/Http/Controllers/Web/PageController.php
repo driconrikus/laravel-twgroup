@@ -16,9 +16,9 @@ class PageController extends Controller
         return view('web.publications', compact('publications'));
     }
 
-    public function publication($slug)
+    public function publication($title)
     {
-        $publication = Publication::where('slug', $slug)->first();
+        $publication = Publication::where('title', $title)->first();
 
         return view('web.publication', compact('publication'));
     }

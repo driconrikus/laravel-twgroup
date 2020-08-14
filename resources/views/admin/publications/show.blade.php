@@ -11,7 +11,6 @@
                 </div>
                 <div class="card-body">
                     <p><strong>Title</strong> {{ $publication->title }}</p>
-                    <p><strong>Slug</strong>  {{ $publication->slug }}</p>
                 </div>
             </div>
         </div>

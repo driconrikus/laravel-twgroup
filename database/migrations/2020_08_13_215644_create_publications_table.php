@@ -15,9 +15,8 @@ class CreatePublicationsTable extends Migration
     {
         Schema::create('publications', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('slug', 128)->unique;
             $table->string('title', 256);
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->index()->nullable();
             $table->text('content')->nullable;
             $table->timestamps();
 

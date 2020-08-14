@@ -10,7 +10,6 @@ $factory->define(App\Publication::class, function (Faker $faker) {
     return [
         'user_id' => rand(1,128),
         'title' => $title,
-        'slug' => Str::slug($title),
         'content' => $faker->text(256)
     ];
 });
