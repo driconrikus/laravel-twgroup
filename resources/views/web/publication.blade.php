@@ -11,9 +11,19 @@
                <p class="card-text"> 
                    {{ $publication->content }}
                </p>
-               <p class="d-flex justify-content-end">Fecha de publicación: {{ $publication->created_at }} </p>
-               <a href="{{ route('publications.edit', $publication->id) }}" class="d-flex justify-content-end">Editar...</a>
-               <a href="#" class="d-flex justify-content-end">Añadir comentario</a>
+               <hr>
+               <p class="d-flex justify-content-end">Publicado: {{ $publication->created_at }} </p>
+               <div class="col-md-12 text-right">
+               <a href="{{ route('publications.edit', $publication->id) }}" class="btn btn-sm btn-primary">Editar...</a>
+               </div>
+               <hr>
+               <div class="card-body">
+                {!! Form::model($publication, ['route' => ['publication', $publication->title], 'method' => 'POST']) !!}
+                        
+                        @include('admin.publications.partials.comment')
+
+                    {!! Form::close() !!}
+                </div>
             </div>
 
         </div>

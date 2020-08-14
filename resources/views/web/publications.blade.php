@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="col-md-8 col-md-offset-2 text-center">
-        <h1>Lista de Publicaciones</h1>
+        <h1>Bienvenido</h1>
 
         @foreach($publications as $publication)
         <div class="card mb-3">

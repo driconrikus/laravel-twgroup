@@ -6,12 +6,14 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="card mb-3">
                     <div class="">
-                        <h2 class="card-title ml-2 text-center">Lista de publicaciones</h2>
+                        <h2 class="card-title mt-1 text-center">Lista de publicaciones</h2>
                     </div>
+                    <div class="col-md-12 text-center">
                     <a href="{{ route('publications.create') }}"
                             class="btn btn-sm btn-primary pull-right">
                             Crear
                         </a>
+                    </div>
                 <div class="card-body">
                     <table class="table table-striped table-hover">
                         
