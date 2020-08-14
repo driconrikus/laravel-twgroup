@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\PublicationStoreRequest;
+use App\Http\Requests\PublicationUpdateRequest;
 
 use App\Publication;
 
@@ -20,7 +22,9 @@ class PublicationsController extends Controller
      */
     public function index()
     {
-        return 'Yo!';
+        $publications = Publication::orderBy('id', 'DESC')->paginate(10);
+
+        return view('admin.publications.index', compact('publications'));
     }
 
     /**
@@ -30,7 +34,7 @@ class PublicationsController extends Controller
      */
     public function create()
     {
-        //
+       return view('admin.publications.create');
     }
 
     /**
@@ -39,9 +43,12 @@ class PublicationsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PublicationStoreRequest $request)
     {
-        //
+        $publication = Publication::create($request->all());
+
+        return redirect()->route('publications.edit', $publication->id)
+            ->with('info', 'Publicación creada con éxito.');
     }
 
     /**
@@ -52,7 +59,9 @@ class PublicationsController extends Controller
      */
     public function show($id)
     {
-        //
+        $publication = Publication::find($id);
+
+        return view('admin.publications.show');
     }
 
     /**
@@ -63,7 +72,9 @@ class PublicationsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $publication = Publication::find($id);
+
+        return view('admin.publications.edit');
     }
 
     /**
@@ -73,9 +84,14 @@ class PublicationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PublicationUpdateRequest $request, $id)
     {
-        //
+        $publication = Publication::find($id);
+
+        $publication->fill($request->all())->save();
+
+        return redirect()->route('publications.edit', $publication->id)
+            ->with('info', 'Publicación editada con éxito.');
     }
 
     /**
@@ -86,6 +102,8 @@ class PublicationsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Publication::find($id)->delete();
+
+        return back()->with('info', 'Publicación eliminada correctamente');
     }
 }
